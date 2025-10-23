@@ -2,12 +2,15 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Formation UML - Initiation</title>
+    <title>Formation UML - Initiation complète</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/theme/white.css">
     <style>
+        h1, h2 { font-size: 1.8em; } /* réduire la taille des titres */
         svg { border: 1px solid #ccc; margin-top: 10px; }
-        .diagram { width: 90%; height: 120px; }
+        .diagram { width: 90%; height: 120px; margin: 10px 0; }
+        pre { font-size: 0.9em; }
+        ul { font-size: 1em; }
     </style>
 </head>
 <body>
@@ -20,15 +23,36 @@
             <p>Principes, concepts abstraits et langages visuels</p>
         </section>
 
-        <!-- Slide 2 : Systémique -->
+        <!-- Slide 2 : Objectifs du cours -->
+        <section>
+            <h2>Objectifs de la formation</h2>
+            <ul>
+                <li>Comprendre UML comme langage de concepts</li>
+                <li>Distinguer modèle abstrait et diagrammes</li>
+                <li>Découvrir l’évolution paradigme objet → composant → containers</li>
+                <li>Pratiquer la modélisation systémique avec différents diagrammes</li>
+            </ul>
+        </section>
+
+        <!-- Slide 3 : Pourquoi modéliser -->
+        <section>
+            <h2>Pourquoi modéliser ?</h2>
+            <ul>
+                <li>Complexité des systèmes</li>
+                <li>Communication entre acteurs et équipes</li>
+                <li>Réutilisation et maintenance</li>
+                <li>Validation et cohérence des conceptions</li>
+            </ul>
+        </section>
+
+        <!-- Slide 4 : Notion de systémique -->
         <section>
             <h2>La systémique : penser les systèmes dans leur ensemble</h2>
             <ul>
-                <li>Approche centrée sur interactions et composants</li>
-                <li>Hiérarchie, composition et flux d’information</li>
+                <li>Composants, interactions, hiérarchie</li>
+                <li>Flux d’information et dépendances</li>
                 <li>Systèmes complexes et hétérogènes</li>
             </ul>
-            <p><em>Exemple de système :</em></p>
             <svg class="diagram">
                 <rect x="10" y="10" width="80" height="40" fill="#b3d9ff"/>
                 <rect x="120" y="10" width="80" height="40" fill="#b3d9ff"/>
@@ -43,15 +67,14 @@
             </svg>
         </section>
 
-        <!-- Slide 3 : Paradigmes -->
+        <!-- Slide 5 : Évolution paradigmes -->
         <section>
             <h2>Évolution des paradigmes</h2>
             <ul>
                 <li><strong>Objet :</strong> classes, héritage, réutilisation limitée</li>
                 <li><strong>Composant :</strong> composants, interfaces, ports</li>
-                <li>Introduction des containers et policies</li>
+                <li>Containers et policies techniques pour héberger logique métier</li>
             </ul>
-            <p><em>Mini-diagramme :</em></p>
             <svg class="diagram">
                 <rect x="10" y="10" width="60" height="40" fill="#ffd699"/>
                 <text x="15" y="35" font-size="12">Classe A</text>
@@ -62,24 +85,24 @@
             </svg>
         </section>
 
-        <!-- Slide 4 : Concepts UML -->
+        <!-- Slide 6 : Concepts UML -->
         <section>
-            <h2>UML : langage de concepts abstraits</h2>
+            <h2>UML : concepts abstraits</h2>
             <ul>
-                <li>Classes, composants, ports, relations, activités…</li>
-                <li>Règles et contraintes</li>
-                <li>Diagrammes = vues partielles</li>
+                <li>Classes, composants, ports, relations, activités</li>
+                <li>Contraintes et cohérence</li>
+                <li>Diagrammes = vues partielles du modèle abstrait</li>
             </ul>
         </section>
 
-        <!-- Slide 5 : Modèle abstrait -->
+        <!-- Slide 7 : Modèle abstrait vs diagrammes -->
         <section>
-            <h2>Modèle abstrait vs diagrammes</h2>
+            <h2>Modèle abstrait vs vues graphiques</h2>
             <svg class="diagram">
                 <rect x="10" y="10" width="120" height="50" fill="#e0e0e0"/>
                 <text x="15" y="35" font-size="12">Modèle abstrait</text>
                 <rect x="150" y="10" width="120" height="50" fill="#b3d9ff"/>
-                <text x="155" y="35" font-size="12">Diagramme de classes</text>
+                <text x="155" y="35" font-size="12">Diagramme classes</text>
                 <rect x="290" y="10" width="120" height="50" fill="#b3d9ff"/>
                 <text x="295" y="35" font-size="12">Diagramme composite</text>
                 <line x1="130" y1="35" x2="150" y2="35" stroke="#000" stroke-width="2" marker-end="url(#arrow2)"/>
@@ -92,16 +115,15 @@
             </svg>
         </section>
 
-        <!-- Slide 6 : Langage visuel -->
+        <!-- Slide 8 : Langage visuel UML -->
         <section>
             <h2>Langage visuel et syntaxe</h2>
             <ul>
                 <li>Symboles = mots</li>
                 <li>Compositions = phrases</li>
                 <li>Diagrammes = paragraphes</li>
-                <li>Grammaire = règles de combinaison</li>
+                <li>Grammaire = règles de combinaison et compatibilité</li>
             </ul>
-            <p><em>Mini-diagramme composite avec ports :</em></p>
             <svg class="diagram">
                 <rect x="10" y="10" width="80" height="40" fill="#ffd699"/>
                 <text x="15" y="35" font-size="12">Comp A</text>
@@ -117,12 +139,12 @@
             </svg>
         </section>
 
-        <!-- Slide 7 : Containers -->
+        <!-- Slide 9 : Containers -->
         <section>
-            <h2>Containers et deployment de la logique métier</h2>
+            <h2>Containers et déploiement</h2>
             <ul>
-                <li>Composants autonomes avec ports et interfaces</li>
-                <li>Containers hébergent la logique métier</li>
+                <li>Hébergent composants avec logique métier</li>
+                <li>Ports, interfaces et communication</li>
                 <li>Application de policies techniques</li>
             </ul>
             <svg class="diagram">
@@ -135,7 +157,7 @@
             </svg>
         </section>
 
-        <!-- Slide 8 : Outils -->
+        <!-- Slide 10 : Outils UML -->
         <section>
             <h2>Outils UML</h2>
             <table border="1" cellpadding="5">
@@ -146,37 +168,128 @@
             </table>
         </section>
 
-        <!-- Slide 9 : Métaphore -->
+        <!-- Slide 11 : Diagramme de classes simple -->
         <section>
-            <h2>Métaphore pédagogique</h2>
-            <p>“Un diagramme UML est une phrase dans un langage visuel : les symboles sont les mots, les compositions sont les phrases, et la grammaire garantit que le sens est clair et correct.”</p>
-        </section>
-
-        <!-- Slide 10 : Résumé -->
-        <section>
-            <h2>Résumé et liens</h2>
-            <ul>
-                <li>UML = concepts abstraits, contraintes et relations</li>
-                <li>Diagrammes = vues concrètes respectant syntaxe et règles</li>
-                <li>Paradigme objet → composant → container</li>
-                <li>Outils différents = différentes projections du même modèle</li>
-            </ul>
-            <p><em>Schéma final :</em></p>
+            <h2>Exemple : diagramme de classes</h2>
             <svg class="diagram">
-                <rect x="10" y="10" width="120" height="40" fill="#e0e0e0"/>
-                <text x="15" y="35" font-size="12">Modèle abstrait</text>
-                <rect x="150" y="10" width="120" height="40" fill="#b3d9ff"/>
-                <text x="155" y="35" font-size="12">Vues / Diagrammes</text>
-                <rect x="290" y="10" width="120" height="40" fill="#ffd699"/>
-                <text x="295" y="35" font-size="12">Containers / Deployment</text>
-                <line x1="130" y1="30" x2="150" y2="30" stroke="#000" stroke-width="2" marker-end="url(#arrow4)"/>
-                <line x1="270" y1="30" x2="290" y2="30" stroke="#000" stroke-width="2" marker-end="url(#arrow4)"/>
+                <rect x="10" y="10" width="100" height="50" fill="#b3d9ff"/>
+                <text x="15" y="35" font-size="12">Classe A</text>
+                <rect x="150" y="10" width="100" height="50" fill="#b3d9ff"/>
+                <text x="155" y="35" font-size="12">Classe B</text>
+                <line x1="110" y1="35" x2="150" y2="35" stroke="#000" stroke-width="2" marker-end="url(#arrow4)"/>
                 <defs>
                     <marker id="arrow4" markerWidth="10" markerHeight="10" refX="0" refY="3" orient="auto">
                         <path d="M0,0 L0,6 L9,3 z" fill="#000"/>
                     </marker>
                 </defs>
             </svg>
+        </section>
+
+        <!-- Slide 12 : Diagramme composite -->
+        <section>
+            <h2>Diagramme composite avec ports typés</h2>
+            <svg class="diagram">
+                <rect x="10" y="10" width="80" height="40" fill="#ffd699"/>
+                <text x="15" y="35" font-size="12">Comp A</text>
+                <circle cx="100" cy="30" r="5" fill="#000"/>
+                <line x1="100" y1="30" x2="150" y2="30" stroke="#000" stroke-width="2" marker-end="url(#arrow5)"/>
+                <rect x="150" y="10" width="80" height="40" fill="#b3ffb3"/>
+                <text x="155" y="35" font-size="12">Comp B</text>
+                <defs>
+                    <marker id="arrow5" markerWidth="10" markerHeight="10" refX="0" refY="3" orient="auto">
+                        <path d="M0,0 L0,6 L9,3 z" fill="#000"/>
+                    </marker>
+                </defs>
+            </svg>
+        </section>
+
+        <!-- Slide 13 : Diagramme de séquence -->
+        <section>
+            <h2>Diagramme de séquence simplifié</h2>
+            <svg class="diagram">
+                <line x1="50" y1="20" x2="50" y2="80" stroke="#000" stroke-width="2"/>
+                <text x="35" y="15" font-size="12">Actor</text>
+                <line x1="150" y1="20" x2="150" y2="80" stroke="#000" stroke-width="2"/>
+                <text x="135" y="15" font-size="12">Comp A</text>
+                <line x1="50" y1="40" x2="150" y2="40" stroke="#000" stroke-width="2" marker-end="url(#arrow6)"/>
+                <defs>
+                    <marker id="arrow6" markerWidth="10" markerHeight="10" refX="0" refY="3" orient="auto">
+                        <path d="M0,0 L0,6 L9,3 z" fill="#000"/>
+                    </marker>
+                </defs>
+            </svg>
+        </section>
+
+        <!-- Slide 14 : Diagramme d’activités -->
+        <section>
+            <h2>Diagramme d’activités simplifié</h2>
+            <svg class="diagram">
+                <ellipse cx="60" cy="30" rx="40" ry="15" fill="#b3d9ff"/>
+                <text x="30" y="35" font-size="12">Start</text>
+                <rect x="40" y="60" width="80" height="30" fill="#ffd699"/>
+                <text x="45" y="80" font-size="12">Action 1</text>
+                <line x1="60" y1="45" x2="60" y2="60" stroke="#000" stroke-width="2" marker-end="url(#arrow7)"/>
+                <defs>
+                    <marker id="arrow7" markerWidth="10" markerHeight="10" refX="0" refY="3" orient="auto">
+                        <path d="M0,0 L0,6 L9,3 z" fill="#000"/>
+                    </marker>
+                </defs>
+            </svg>
+        </section>
+
+        <!-- Slide 15 : Projection modèle → vues -->
+        <section>
+            <h2>Projection du modèle abstrait sur plusieurs vues</h2>
+            <svg class="diagram">
+                <rect x="10" y="10" width="120" height="40" fill="#e0e0e0"/>
+                <text x="15" y="35" font-size="12">Modèle abstrait</text>
+                <rect x="150" y="10" width="120" height="40" fill="#b3d9ff"/>
+                <text x="155" y="35" font-size="12">Diagramme classes</text>
+                <rect x="290" y="10" width="120" height="40" fill="#b3ffb3"/>
+                <text x="295" y="35" font-size="12">Diagramme composants</text>
+                <rect x="430" y="10" width="120" height="40" fill="#ffb3b3"/>
+                <text x="435" y="35" font-size="12">Containers</text>
+                <line x1="130" y1="30" x2="150" y2="30" stroke="#000" stroke-width="2" marker-end="url(#arrow8)"/>
+                <line x1="270" y1="30" x2="290" y2="30" stroke="#000" stroke-width="2" marker-end="url(#arrow8)"/>
+                <line x1="410" y1="30" x2="430" y2="30" stroke="#000" stroke-width="2" marker-end="url(#arrow8)"/>
+                <defs>
+                    <marker id="arrow8" markerWidth="10" markerHeight="10" refX="0" refY="3" orient="auto">
+                        <path d="M0,0 L0,6 L9,3 z" fill="#000"/>
+                    </marker>
+                </defs>
+            </svg>
+        </section>
+
+        <!-- Slide 16 : Sérialisation et code -->
+        <section>
+            <h2>Sérialisation des modèles UML</h2>
+            <ul>
+                <li>XMI, JSON pour échange et persistance</li>
+                <li>Génération de code à partir du modèle</li>
+                <li>Alignement entre diagrammes, modèle et code</li>
+            </ul>
+            <pre>
+Modèle UML → PlantUML → Diagramme → XMI → Génération code
+            </pre>
+        </section>
+
+        <!-- Slide 17 : Synthèse et métaphore -->
+        <section>
+            <h2>Métaphore pédagogique finale</h2>
+            <p>“Un diagramme UML est une phrase dans un langage visuel :  
+            les symboles sont les mots, les compositions sont les phrases,  
+            et la grammaire garantit que le sens est correct et compréhensible.”</p>
+        </section>
+
+        <!-- Slide 18 : Résumé général -->
+        <section>
+            <h2>Résumé des concepts clés</h2>
+            <ul>
+                <li>UML = concepts abstraits + contraintes + relations</li>
+                <li>Diagrammes = vues concrètes respectant syntaxe et règles</li>
+                <li>Paradigme objet → composant → container</li>
+                <li>Outils différents = projections différentes du même modèle</li>
+            </ul>
         </section>
 
     </div>
