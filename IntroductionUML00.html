@@ -193,6 +193,139 @@
                 </li>
             </ul>
 
+            <h2>Session 03</h2>
+
+            <h3>Résumé rapide</h3>
+
+            <p>La quatrième session plonge au cœur de l'ingénierie par les modèles en distinguant trois niveaux
+                essentiels : le CIM qui capture le domaine métier sans technologie, le PIM qui définit la logique
+                applicative indépendante de toute plateforme, et le PSM qui paramètre cette logique pour une technologie
+                concrète. Une démonstration clé montre que le même diagramme de classes peut servir à formaliser le
+                vocabulaire métier ou spécifier la structure logicielle, selon son contenu. L'outil PlantUML est
+                présenté comme une porte d'entrée pratique grâce à sa syntaxe textuelle, mais avec une limite majeure :
+                il dessine sans comprendre la sémantique des modèles, contrairement aux outils professionnels comme
+                MagicDraw ou Papyrus qui vérifient automatiquement la cohérence. Le diagramme de séquence, quant à lui,
+                s'apparente à une recette de cuisine chronologique d'échanges entre acteurs. L'originalité pédagogique
+                réside dans l'utilisation des LLM pour extraire le vocabulaire de chaque domaine étudiant, générant des
+                modèles personnalisés. L'objectif n'est pas de former des analystes métiers mais de rendre les futurs
+                ingénieurs capables de formaliser leur expertise, critiquer des modèles, et dialoguer efficacement avec
+                les concepteurs pour garantir que les applications répondent réellement aux besoins opérationnels.
+            </p>
+            <h3>Résumé long</h3>
+            Contexte et enjeux de la session
+            <p>Cette quatrième session marque un tournant décisif dans l'approche pédagogique du cours d'UML et
+                d'ingénierie par les modèles. Jusqu'à présent, les concepts avaient été abordés de manière générale,
+                mais il devenait essentiel de les ancrer dans la réalité des futurs ingénieurs présents en salle, issus
+                de disciplines variées telles que l'hydrographie, l'automatisme ou d'autres domaines techniques.
+                L'objectif affiché était de transformer chaque étudiant en interlocuteur valide des analystes métiers et
+                des concepteurs logiciels, en lui donnant les clés pour formaliser son propre domaine sans pour autant
+                devenir développeur. La session s'est donc articulée autour d'une démonstration pratique, utilisant les
+                Large Language Models comme assistant à la formalisation, tout en posant les bases d'une critique
+                éclairée des outils de modélisation.
+            </p>
+            <h4>Les trois niveaux de modélisation MDA comme fondement méthodologique</h4>
+
+            <p>Le cours a approfondi les trois strates du Model Driven Architecture, en insistant sur la nécessité de ne
+                jamais les confondre. Le Computation Independent Model constitue le premier palier, celui où l'on décrit
+                le métier dans son langage naturel, en excluant toute considération informatique. Il s'agit de capturer
+                les acteurs, leurs activités, les artefacts qu'ils produisent et les informations qu'ils manipulent.
+                C'est à ce niveau que se situe la valeur ajoutée de l'expert métier, car personne d'autre ne peut
+                décrire avec autant de précision les rouages du domaine. Le Platform Independent Model représente la
+                couche suivante, où l'on définit la solution logicielle dans son ensemble, en choisissant son paradigme,
+                objet ou composant, mais en refusant encore de se prononcer sur les technologies de réalisation. C'est
+                ici qu'apparaissent les premiers éléments techniques comme les identifiants uniques universels ou les
+                opérations que doit fournir l'application. Enfin, le Platform Specific Model vient paramétrer ce modèle
+                logique en fonction d'une plateforme choisie, que ce soit une base PostgreSQL, un framework Python ou
+                une architecture Docker. Cette séparation stricte entre le quoi, le comment logique et le comment
+                technique constitue le fondement de toute ingénierie logicielle robuste et évolutive.
+            </p>
+            <h4>Le diagramme de classes : un même langage visuel pour des intentions différentes</h4>
+            <p>Une partie importante de la session a été consacrée à déconstruire le préjugé selon lequel un type de
+                diagramme serait réservé à une phase donnée. Le diagramme de classes en particulier peut servir aussi
+                bien à formaliser le vocabulaire métier dans un CIM qu'à spécifier la structure logicielle dans un PIM.
+                La différence ne réside pas dans la syntaxe graphique, qui reste la même, mais dans le contenu
+                sémantique des classes. Dans un modèle conceptuel, les classes contiennent uniquement des attributs
+                métiers, sans identifiant technique ni opération liée à l'informatique. Dans un modèle logique, les
+                mêmes classes se voient ajouter un uuid, des opérations comme executer ou valider, et une structure qui
+                préfigure le code. Cette dualité d'usage explique pourquoi il est impératif de toujours préciser le
+                niveau de modélisation avant de commencer à dessiner, pour éviter toute confusion chez les lecteurs du
+                modèle.</p>
+            <h4>Diagramme de séquence : représenter le comportement comme une recette</h4>
+            <p>
+                Le cours a ensuite introduit le diagramme de séquence comme outil privilégié pour capturer les
+                comportements dynamiques du système. Contrairement aux diagrammes structurels, le séquence impose un
+                ordre chronologique de lecture, de haut en bas, ce qui en fait un outil proche d'une recette de cuisine
+                ou d'un script procédural. Chaque ligne de vie représente un acteur ou un composant actif, et chaque
+                flèche horizontale matérialise un échange de message, c'est-à-dire un appel d'opération avec ses
+                paramètres d'entrée et sa réponse. Le formalisme permet d'exprimer des boucles, des alternatives
+                conditionnelles et des blocs réutilisables, offrant une expressivité comparable à celle d'un langage de
+                programmation, tout en restant accessible aux non-informaticiens. L'exemple concret d'une création de
+                rapport d'hydrologue, avec ses appels successifs à l'interface utilisateur, au service métier, au bus
+                d'événements et au gestionnaire de traçabilité, a permis d'illustrer comment un même diagramme peut être
+                utilisé à des niveaux de détail différents, du métier à la technique.
+            </p>
+            <h4>PlantUML : un assistant de démarrage plein de qualités mais aux limites bien réelles</h4>
+            <p>La démonstration pratique a été réalisée avec PlantUML, choisi pour sa syntaxe textuelle rapide et sa
+                capacité à générer automatiquement des diagrammes visuels. L'outil a fait ses preuves pour une
+                initiation, permettant de passer d'une description textuelle à une visualisation en quelques secondes.
+                L'export en format SVG a même permis d'observer comment un diagramme vectoriel reste une suite de
+                primitives graphiques sans signification pour l'ordinateur. C'est là qu'est apparu le cœur du message
+                pédagogique : PlantUML est un outil de dessin, pas de modélisation sémantique. Il ne vérifie pas que
+                votre classe a un identifiant, ne garantit pas la cohérence entre diagrammes, ne refactorise pas
+                automatiquement vos modifications. Le mélange, dans la syntaxe, entre la définition du modèle et ses
+                aspects visuels (couleurs, disposition) rend rapidement difficile la maintenance d'un modèle de taille
+                importante. L'absence d'identifiants uniques pour les éléments du modèle constitue une autre faiblesse
+                majeure, qui interdit toute automatisation sérieuse de la vérification ou de la génération de code.
+            </p>
+            <h4>L'utilisation des LLM comme catalyseur de formalisation</h4>
+            <p>L'originalité de cette session résidait dans la proposition d'utiliser ChatGPT comme assistant à la
+                formalisation. L'exercice demandé aux étudiants consistait à soumettre à un LLM une description de leur
+                domaine métier, puis à lui demander d'en extraire le vocabulaire et de générer le code PlantUML
+                correspondant. Cette approche, bien qu'elle nécessite une relecture critique des propositions de l'IA,
+                permet de dépasser le blocage de la page blanche et d'accélérer la première itération de modélisation.
+                Elle a cependant été présentée comme une aide de démarrage, et non comme une solution automatisée, tant
+                la compréhension fine du métier reste le propre de l'humain. L'enseignant a lui-même démontré la
+                démarche sur son propre domaine, l'ingénierie par les modèles, montrant comment ChatGPT pouvait proposer
+                un modèle conceptuel détaillé puis le traduire en diagramme, tout en soulignant les erreurs ou les
+                approximations à corriger.
+            </p>
+            <h4>Critique des outils comme levier de compréhension du métier de la modélisation</h4>
+            <p>En passant en revue les limites de PlantUML, le cours préparait en réalité le terrain pour la suite de la
+                formation, où seront présentés des outils de modélisation professionnels tels que MagicDraw, Enterprise
+                Architect ou Papyrus. La capacité de ces ateliers à manipuler des modèles sémantiques, à vérifier
+                automatiquement la cohérence, à refactoriser les changements et à simuler des comportements a été
+                présentée comme la suite logique de la prise de conscience des limites de solutions plus simples.
+                L'objectif n'est pas de dénigrer PlantUML, qui reste un excellent outil pédagogique et de documentation
+                rapide, mais de comprendre à quel moment il devient nécessaire de passer à des outils plus exigeants
+                pour des projets de taille et de complexité croissantes. Cette progression en cascade, du texte libre
+                vers PlantUML puis vers des ateliers UML complets, structure la suite du cursus.
+            </p>
+            <h4>Votre place dans la chaîne de valeur de la modélisation</h4>
+            <p>Le cours s'est achevé par un positionnement clair des étudiants dans le processus global de développement
+                logiciel. Ils ne sont pas appelés à devenir des analystes métiers, des architectes ou des développeurs,
+                mais à occuper une place singulière et essentielle : celle de l'expert métier capable de dialoguer avec
+                toutes ces fonctions. Leur capacité à formaliser leur propre domaine, à lire et critiquer les modèles
+                qui leur sont proposés, à valider la cohérence entre une application en conception et leurs besoins
+                réels, constitue leur principale valeur ajoutée. Le cours a ainsi redéfini leur rapport à l'UML : non
+                pas comme une technologie à maîtriser dans son intégralité, mais comme un langage de communication qui
+                leur permettra, tout au long de leur carrière, de garantir que les systèmes informatiques développés
+                répondent effectivement aux enjeux opérationnels qu'ils connaissent mieux que quiconque. Cette posture
+                active, de co-concepteur plutôt que de simple utilisateur, a été présentée comme le principal objectif
+                pédagogique des séances à venir.
+            </p>
+            <h4>Préparation de la suite : vos cas concrets au cœur de la méthode</h4>
+            <p>Les consignes pour la semaine suivante ont été formulées comme un appel à l'engagement personnel. Chaque
+                étudiant doit choisir son propre domaine, utiliser un LLM pour en extraire le vocabulaire, générer trois
+                diagrammes PlantUML (classes CIM, classes PIM, séquence) et les transmettre à l'enseignant avant la
+                prochaine session. Ce travail, qui servira de base à l'analyse collective et à l'exploration des outils
+                professionnels, a été explicitement lié à une récompense pédagogique sous forme de bonus de notation,
+                encourageant ainsi une participation active. La session suivante ambitionne de transformer ces
+                productions individuelles en une bibliothèque de cas réels, exploités pour illustrer les apports des
+                ateliers de modélisation tout en poursuivant l'exploration des diagrammes UML les plus adaptés à chaque
+                situation. Cette démarche contextualisée, où chaque étudiant verra son métier modélisé et discuté,
+                constitue le fil rouge de la seconde partie du cours.
+            </p>
+
             <h4>Documents externes :</h4>
             <ul>
                 <li><a href="https://www.omg.org/spec/UML/2.5.1/About-UML" target="_blank">Spécification
