@@ -197,148 +197,515 @@
 
             <h3>Résumé rapide</h3>
 
-            <p>La quatrième session plonge au cœur de l'ingénierie par les modèles en distinguant trois niveaux
-                essentiels : le CIM qui capture le domaine métier sans technologie, le PIM qui définit la logique
-                applicative indépendante de toute plateforme, et le PSM qui paramètre cette logique pour une technologie
-                concrète. Une démonstration clé montre que le même diagramme de classes peut servir à formaliser le
-                vocabulaire métier ou spécifier la structure logicielle, selon son contenu. L'outil PlantUML est
-                présenté comme une porte d'entrée pratique grâce à sa syntaxe textuelle, mais avec une limite majeure :
-                il dessine sans comprendre la sémantique des modèles, contrairement aux outils professionnels comme
-                MagicDraw ou Papyrus qui vérifient automatiquement la cohérence. Le diagramme de séquence, quant à lui,
-                s'apparente à une recette de cuisine chronologique d'échanges entre acteurs. L'originalité pédagogique
-                réside dans l'utilisation des LLM pour extraire le vocabulaire de chaque domaine étudiant, générant des
-                modèles personnalisés. L'objectif n'est pas de former des analystes métiers mais de rendre les futurs
-                ingénieurs capables de formaliser leur expertise, critiquer des modèles, et dialoguer efficacement avec
-                les concepteurs pour garantir que les applications répondent réellement aux besoins opérationnels.
+            <p>La Session 4 introduit l'Ingénierie par les Modèles (MDA) et l'utilisation d'UML, en soulignant la
+                distinction fondamentale entre modéliser et simplement dessiner. L'approche s'organise selon trois
+                niveaux essentiels : le CIM (Conceptual Independent Model) qui décrit le domaine métier indépendamment
+                de toute technologie, le PIM (Platform Independent Model) qui définit la logique applicative de manière
+                abstraite, et le PSM (Platform Specific Model) qui adapte cette logique à une technologie concrète. Il
+                est démontré que le diagramme de classes sert soit à formaliser le vocabulaire métier, soit à spécifier
+                la structure logicielle, tandis que le diagramme de séquence représente une séquence chronologique
+                d'échanges entre acteurs. L'outil PlantUML est présenté pour sa facilité d'utilisation et sa capacité à
+                être généré par des LLM (Large Language Models), mais une mise en garde majeure est faite : il génère
+                uniquement des images (dessins) qui ne sont pas sémantiquement exploitables. À l'inverse, les outils
+                professionnels comme MagicDraw ou Papyrus sont nécessaires pour créer de véritables modèles, vérifiables
+                en termes de cohérence et manipulables automatiquement. L'objectif pédagogique n'est pas de former des
+                analystes, mais de rendre les futurs ingénieurs capables de formaliser leur expertise, de critiquer les
+                modèles existants et d'assurer une communication efficace avec les concepteurs pour garantir que les
+                applications répondent précisément aux besoins opérationnels.
             </p>
             <h3>Résumé long</h3>
-            Contexte et enjeux de la session
-            <p>Cette quatrième session marque un tournant décisif dans l'approche pédagogique du cours d'UML et
-                d'ingénierie par les modèles. Jusqu'à présent, les concepts avaient été abordés de manière générale,
-                mais il devenait essentiel de les ancrer dans la réalité des futurs ingénieurs présents en salle, issus
-                de disciplines variées telles que l'hydrographie, l'automatisme ou d'autres domaines techniques.
-                L'objectif affiché était de transformer chaque étudiant en interlocuteur valide des analystes métiers et
-                des concepteurs logiciels, en lui donnant les clés pour formaliser son propre domaine sans pour autant
-                devenir développeur. La session s'est donc articulée autour d'une démonstration pratique, utilisant les
-                Large Language Models comme assistant à la formalisation, tout en posant les bases d'une critique
-                éclairée des outils de modélisation.
-            </p>
-            <h4>Les trois niveaux de modélisation MDA comme fondement méthodologique</h4>
+            <p>Cette quatrième session constitue un tournant décisif dans l'enseignement de l'UML et de l'ingénierie par
+                les modèles. Elle ancre les concepts théoriques dans la réalité des futurs ingénieurs issus de
+                disciplines techniques variées (hydrographie, automatisme, etc.). L'objectif pédagogique principal est
+                de transformer chaque étudiant en un expert métier capable de dialoguer efficacement avec les analystes
+                et les concepteurs logiciels. La session s'articule autour d'une démonstration pratique utilisant les
+                Large Language Models (LLM) comme assistants de formalisation, tout en posant les bases d'une critique
+                éclairée des outils.</p>
 
-            <p>Le cours a approfondi les trois strates du Model Driven Architecture, en insistant sur la nécessité de ne
-                jamais les confondre. Le Computation Independent Model constitue le premier palier, celui où l'on décrit
-                le métier dans son langage naturel, en excluant toute considération informatique. Il s'agit de capturer
-                les acteurs, leurs activités, les artefacts qu'ils produisent et les informations qu'ils manipulent.
-                C'est à ce niveau que se situe la valeur ajoutée de l'expert métier, car personne d'autre ne peut
-                décrire avec autant de précision les rouages du domaine. Le Platform Independent Model représente la
-                couche suivante, où l'on définit la solution logicielle dans son ensemble, en choisissant son paradigme,
-                objet ou composant, mais en refusant encore de se prononcer sur les technologies de réalisation. C'est
-                ici qu'apparaissent les premiers éléments techniques comme les identifiants uniques universels ou les
-                opérations que doit fournir l'application. Enfin, le Platform Specific Model vient paramétrer ce modèle
-                logique en fonction d'une plateforme choisie, que ce soit une base PostgreSQL, un framework Python ou
-                une architecture Docker. Cette séparation stricte entre le quoi, le comment logique et le comment
-                technique constitue le fondement de toute ingénierie logicielle robuste et évolutive.
-            </p>
-            <h4>Le diagramme de classes : un même langage visuel pour des intentions différentes</h4>
-            <p>Une partie importante de la session a été consacrée à déconstruire le préjugé selon lequel un type de
-                diagramme serait réservé à une phase donnée. Le diagramme de classes en particulier peut servir aussi
-                bien à formaliser le vocabulaire métier dans un CIM qu'à spécifier la structure logicielle dans un PIM.
-                La différence ne réside pas dans la syntaxe graphique, qui reste la même, mais dans le contenu
-                sémantique des classes. Dans un modèle conceptuel, les classes contiennent uniquement des attributs
-                métiers, sans identifiant technique ni opération liée à l'informatique. Dans un modèle logique, les
-                mêmes classes se voient ajouter un uuid, des opérations comme executer ou valider, et une structure qui
-                préfigure le code. Cette dualité d'usage explique pourquoi il est impératif de toujours préciser le
-                niveau de modélisation avant de commencer à dessiner, pour éviter toute confusion chez les lecteurs du
-                modèle.</p>
-            <h4>Diagramme de séquence : représenter le comportement comme une recette</h4>
-            <p>
-                Le cours a ensuite introduit le diagramme de séquence comme outil privilégié pour capturer les
-                comportements dynamiques du système. Contrairement aux diagrammes structurels, le séquence impose un
-                ordre chronologique de lecture, de haut en bas, ce qui en fait un outil proche d'une recette de cuisine
-                ou d'un script procédural. Chaque ligne de vie représente un acteur ou un composant actif, et chaque
-                flèche horizontale matérialise un échange de message, c'est-à-dire un appel d'opération avec ses
-                paramètres d'entrée et sa réponse. Le formalisme permet d'exprimer des boucles, des alternatives
-                conditionnelles et des blocs réutilisables, offrant une expressivité comparable à celle d'un langage de
-                programmation, tout en restant accessible aux non-informaticiens. L'exemple concret d'une création de
-                rapport d'hydrologue, avec ses appels successifs à l'interface utilisateur, au service métier, au bus
-                d'événements et au gestionnaire de traçabilité, a permis d'illustrer comment un même diagramme peut être
-                utilisé à des niveaux de détail différents, du métier à la technique.
-            </p>
-            <h4>PlantUML : un assistant de démarrage plein de qualités mais aux limites bien réelles</h4>
-            <p>La démonstration pratique a été réalisée avec PlantUML, choisi pour sa syntaxe textuelle rapide et sa
-                capacité à générer automatiquement des diagrammes visuels. L'outil a fait ses preuves pour une
-                initiation, permettant de passer d'une description textuelle à une visualisation en quelques secondes.
-                L'export en format SVG a même permis d'observer comment un diagramme vectoriel reste une suite de
-                primitives graphiques sans signification pour l'ordinateur. C'est là qu'est apparu le cœur du message
-                pédagogique : PlantUML est un outil de dessin, pas de modélisation sémantique. Il ne vérifie pas que
-                votre classe a un identifiant, ne garantit pas la cohérence entre diagrammes, ne refactorise pas
-                automatiquement vos modifications. Le mélange, dans la syntaxe, entre la définition du modèle et ses
-                aspects visuels (couleurs, disposition) rend rapidement difficile la maintenance d'un modèle de taille
-                importante. L'absence d'identifiants uniques pour les éléments du modèle constitue une autre faiblesse
-                majeure, qui interdit toute automatisation sérieuse de la vérification ou de la génération de code.
-            </p>
-            <h4>L'utilisation des LLM comme catalyseur de formalisation</h4>
-            <p>L'originalité de cette session résidait dans la proposition d'utiliser ChatGPT comme assistant à la
-                formalisation. L'exercice demandé aux étudiants consistait à soumettre à un LLM une description de leur
-                domaine métier, puis à lui demander d'en extraire le vocabulaire et de générer le code PlantUML
-                correspondant. Cette approche, bien qu'elle nécessite une relecture critique des propositions de l'IA,
-                permet de dépasser le blocage de la page blanche et d'accélérer la première itération de modélisation.
-                Elle a cependant été présentée comme une aide de démarrage, et non comme une solution automatisée, tant
-                la compréhension fine du métier reste le propre de l'humain. L'enseignant a lui-même démontré la
-                démarche sur son propre domaine, l'ingénierie par les modèles, montrant comment ChatGPT pouvait proposer
-                un modèle conceptuel détaillé puis le traduire en diagramme, tout en soulignant les erreurs ou les
-                approximations à corriger.
-            </p>
-            <h4>Critique des outils comme levier de compréhension du métier de la modélisation</h4>
-            <p>En passant en revue les limites de PlantUML, le cours préparait en réalité le terrain pour la suite de la
-                formation, où seront présentés des outils de modélisation professionnels tels que MagicDraw, Enterprise
-                Architect ou Papyrus. La capacité de ces ateliers à manipuler des modèles sémantiques, à vérifier
-                automatiquement la cohérence, à refactoriser les changements et à simuler des comportements a été
-                présentée comme la suite logique de la prise de conscience des limites de solutions plus simples.
-                L'objectif n'est pas de dénigrer PlantUML, qui reste un excellent outil pédagogique et de documentation
-                rapide, mais de comprendre à quel moment il devient nécessaire de passer à des outils plus exigeants
-                pour des projets de taille et de complexité croissantes. Cette progression en cascade, du texte libre
-                vers PlantUML puis vers des ateliers UML complets, structure la suite du cursus.
-            </p>
-            <h4>Votre place dans la chaîne de valeur de la modélisation</h4>
-            <p>Le cours s'est achevé par un positionnement clair des étudiants dans le processus global de développement
-                logiciel. Ils ne sont pas appelés à devenir des analystes métiers, des architectes ou des développeurs,
-                mais à occuper une place singulière et essentielle : celle de l'expert métier capable de dialoguer avec
-                toutes ces fonctions. Leur capacité à formaliser leur propre domaine, à lire et critiquer les modèles
-                qui leur sont proposés, à valider la cohérence entre une application en conception et leurs besoins
-                réels, constitue leur principale valeur ajoutée. Le cours a ainsi redéfini leur rapport à l'UML : non
-                pas comme une technologie à maîtriser dans son intégralité, mais comme un langage de communication qui
-                leur permettra, tout au long de leur carrière, de garantir que les systèmes informatiques développés
-                répondent effectivement aux enjeux opérationnels qu'ils connaissent mieux que quiconque. Cette posture
-                active, de co-concepteur plutôt que de simple utilisateur, a été présentée comme le principal objectif
-                pédagogique des séances à venir.
-            </p>
-            <h4>Préparation de la suite : vos cas concrets au cœur de la méthode</h4>
-            <p>Les consignes pour la semaine suivante ont été formulées comme un appel à l'engagement personnel. Chaque
-                étudiant doit choisir son propre domaine, utiliser un LLM pour en extraire le vocabulaire, générer trois
-                diagrammes PlantUML (classes CIM, classes PIM, séquence) et les transmettre à l'enseignant avant la
-                prochaine session. Ce travail, qui servira de base à l'analyse collective et à l'exploration des outils
-                professionnels, a été explicitement lié à une récompense pédagogique sous forme de bonus de notation,
-                encourageant ainsi une participation active. La session suivante ambitionne de transformer ces
-                productions individuelles en une bibliothèque de cas réels, exploités pour illustrer les apports des
-                ateliers de modélisation tout en poursuivant l'exploration des diagrammes UML les plus adaptés à chaque
-                situation. Cette démarche contextualisée, où chaque étudiant verra son métier modélisé et discuté,
-                constitue le fil rouge de la seconde partie du cours.
-            </p>
+            <h4>Fondements méthodologiques : Les trois niveaux de modélisation MDA</h4>
+            <p>Le cours approfondit la Model Driven Architecture (MDA), insistant sur la nécessité de distinguer
+                rigoureusement ses trois strates. Le CIM (Computation Independent Model) est le premier palier : il
+                décrit le métier, les acteurs, les artefacts et les informations manipulées sans aucune considération
+                informatique. C'est le niveau où réside la valeur de l'expert métier. Le PIM (Platform Independent
+                Model) représente la couche logique de la solution : il définit le paradigme (objet ou composant) et
+                introduit des éléments techniques comme les identifiants uniques universels (UUID) et les opérations de
+                l'application, mais sans choisir la technologie de réalisation. Enfin, le PSM (Platform Specific Model)
+                vient paramétrer ce modèle logique pour une plateforme technique spécifique (PostgreSQL, framework
+                Python, Docker, etc.). Cette séparation stricte entre le « quoi », le « comment logique » et le «
+                comment technique » est le fondement d'une ingénierie logicielle robuste.</p>
+
+            <h4>Diagrammes : La dualité d'usage et la temporalité du comportement</h4>
+            <p>La session déconstruit le préjugé selon lequel un type de diagramme est réservé à une seule phase. Le
+                diagramme de classes illustre parfaitement cette dualité : il sert à la fois à formaliser le vocabulaire
+                métier (CIM, sans identifiants ni opérations techniques) et à spécifier la structure logicielle (PIM,
+                avec UUID et opérations comme executer ou valider). La différence réside donc dans le contenu sémantique
+                des classes, non dans la syntaxe graphique. Le cours introduit ensuite le diagramme de séquence comme
+                outil privilégié pour capturer les comportements dynamiques. Il impose un ordre chronologique (lecture
+                de haut en bas), fonctionnant comme une « recette de cuisine » où les flèches horizontales matérialisent
+                les échanges de messages (appels d'opérations). Ce formalisme permet d'exprimer des boucles et des
+                alternatives, restant accessible tout en étant expressif.</p>
+
+            <h4>Outils : La distinction cruciale entre Dessin et Modèle Sémantique</h4>
+            <p>La démonstration pratique utilise PlantUML pour sa syntaxe textuelle rapide et sa capacité à générer des
+                diagrammes visuels (SVG, PNG). Cependant, c'est là que se situe le cœur du message pédagogique :
+                PlantUML est un outil de dessin, et non de modélisation sémantique. Il génère des primitives graphiques
+                sans signification pour l'ordinateur, ne vérifie pas la cohérence du modèle entre les diagrammes, et ne
+                permet pas la manipulation ou la génération de code automatisée en raison de l'absence d'identifiants
+                uniques pour les éléments. Cette critique prépare le terrain pour l'étude des outils professionnels
+                (comme MagicDraw ou Papyrus) qui, eux, manipulent des modèles sémantiques stockés dans des formats
+                structurés (XMI), vérifient la cohérence, refactorisent automatiquement les changements et permettent
+                des simulations.</p>
+
+            <h4>Rôle de l'IA et Positionnement dans la chaîne de valeur</h4>
+            <p>L'originalité réside dans l'utilisation des LLM (comme ChatGPT) pour catalyser la formalisation : les
+                étudiants soumettent une description de leur domaine métier pour que l'IA en extraie le vocabulaire et
+                génère le code PlantUML de première itération. Cette approche aide à dépasser le blocage initial, mais
+                l'IA ne remplace pas la compréhension humaine fine du métier. La session s'achève en positionnant
+                clairement les étudiants : ils deviennent les experts métier capables de lire, critiquer et valider les
+                modèles proposés. Leur valeur ajoutée principale est de garantir que les systèmes informatiques
+                répondent effectivement aux enjeux opérationnels. Les étudiants doivent modéliser leur propre domaine
+                (CIM, PIM, Séquence en PlantUML) pour la prochaine session, un travail qui servira de base à l'analyse
+                collective et à l'exploration des outils professionnels.</p>
             <ul>
+                <h3>RETRANSCRIPTION COMPLÈTE DU COURS</h3>
+
+                <h4>I. CONTEXTE ET OBJECTIFS DU COURS</h4>
+
+                <h5>Démarrage technique</h5>
+                <p>La session débute par des ajustements techniques (configuration micro, partage d'écran).
+                    L'enregistrement est lancé et l'objectif est immédiatement posé : capitaliser sur un exercice initié
+                    en présentiel consistant à effectuer un tour d'horizon des domaines métiers pour en extraire un
+                    modèle conceptuel.</p>
+
+                <h5>Enjeu pédagogique</h5>
+                <p>L'activité correspond en MERISE à l'émergence du modèle conceptuel des données. Dans l'approche MDA
+                    (Model Driven Architecture), elle se traduit par le **CIM (Computer Independent Model)**, qui décrit
+                    l'environnement métier avant toute considération informatique. Le but est d'extraire les besoins
+                    pour dériver un modèle d'application qui créera de la valeur pour les utilisateurs.</p>
+                <p>Le CIM répond aux questions :</p>
+                <ul>
+                    <li>Qui sont les acteurs ?</li>
+                    <li>Quelles sont leurs activités ?</li>
+                    <li>Quelles informations consomment-ils/produisent-ils ?</li>
+                </ul>
+
+                <h4>II. SÉPARATION DES PRÉOCCUPATIONS ET RÔLES</h4>
+
+                <h5>Principe de Separation of Concerns</h5>
+                <p>L'approche composant impose de s'isoler du monde informatique pour se concentrer uniquement sur le
+                    métier. On décrit le domaine d'usage sans pollution technique.</p>
+
+                <h5>Contextualisation du CIM</h5>
+                <p>Ce modèle n'est pas toujours évident à produire avec des méthodes traditionnelles. D'où l'intérêt des
+                    LLM (ChatGPT) pour :</p>
+                <ul>
+                    <li>Extraire le vocabulaire métier</li>
+                    <li>Formaliser en PlantUML (syntaxe textuelle générant des diagrammes)</li>
+                </ul>
+                <p>Limitation importante : **PlantUML produit du dessin, pas un modèle sémantique exploitable
+                    automatiquement.**</p>
+
+                <h4>III. DÉMONSTRATION PRATIQUE EN DIRECT</h4>
+
+                <h5>Étape 1 : Génération du CIM</h5>
+                <p>L'intervenant demande à ChatGPT :</p>
+                <p>"Décris-moi le domaine de l'ingénierie par les modèles comme un CIM."</p>
+                <p>Le LLM retourne :</p>
+                <ul>
+                    <li>Dimensions principales du domaine</li>
+                    <li>Acteurs et artefacts (produits concrets, documents)</li>
+                    <li>Concepts abstraits (vocabulaire métier)</li>
+                    <li>Un graphe de concepts (émergence d'une ontologie)</li>
+                </ul>
+                <p>Production PlantUML :</p>
+                <p>Copier-coller du code dans l'éditeur PlantUML → Génération d'un diagramme de classes statique
+                    représentant les classes métier (Transformation, Acteur, Artefact, etc.).</p>
+
+                <h5>Analyse du résultat</h5>
+                <p>Le diagramme affiche des boîtes (templates/canvases) qui structureront les futures instances
+                    logicielles. Chaque classe possède :</p>
+                <ul>
+                    <li>Un nom</li>
+                    <li>Des attributs typés (ex: rules: String)</li>
+                </ul>
+                <p>Critique fondamentale :</p>
+                <p>Ce diagramme est une représentation visuelle, pas un modèle manipulable. Pour l'ordinateur, c'est
+                    juste des rectangles et du texte, pas des objets UML identifiés.</p>
+
+                <h4>IV. MODÉLISER ≠ DESSINER : L'ENJEU CENTRAL</h4>
+
+                <h5>La leçon principale</h5>
+                <p>"Modéliser n'est pas dessiner."</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Dessin (PNG/SVG)</th>
+                            <th>Modèle (outil dédié)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Image statique</td>
+                            <td>Objets typés manipulables</td>
+                        </tr>
+                        <tr>
+                            <td>Pas de vérification syntaxique</td>
+                            <td>Validation automatique des règles</td>
+                        </tr>
+                        <tr>
+                            <td>Modifications manuelles</td>
+                            <td>Mise à jour cohérente multi-diagrammes</td>
+                        </tr>
+                        <tr>
+                            <td>Aucune intelligence sémantique</td>
+                            <td>Raisonnement automatique possible</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p>Conclusion : Inkscape ou un navigateur affichent le SVG comme graphisme vectoriel, mais ne
+                    reconnaissent pas les symboles UML. Il n'y a pas de primitives UML dans le code SVG, juste des
+                    &lt;rect&gt;, &lt;text&gt;, &lt;polygon&gt;.</p>
+
+                <h4>V. PASSAGE AU PIM : L'APPLICATION LOGIQUE</h4>
+
+                <h5>Demande au LLM :</h5>
+                <p>"Génère-moi le PIM correspondant."</p>
+
+                <h5>Production :</h5>
+                <ul>
+                    <li>Diagramme de composants : Architecture multicouches</li>
+                    <ul>
+                        <li>Frontend (interface utilisateur)</li>
+                        <li>Processing engines (validation, simulation, transformation)</li>
+                        <li>Persistence (stockage)</li>
+                        <li>Traceability (traçabilité)</li>
+                    </ul>
+                    <li>Diagramme de classes : Modèle logique orienté objet</li>
+                    <ul>
+                        <li>Apparition d'identifiants techniques (UUID)</li>
+                        <li>Opérations (execute(), validate())</li>
+                        <li>Classes UserRepository, ModelManager, etc.</li>
+                    </ul>
+                </ul>
+
+                <h5>Différences CIM vs PIM cruciales</h5>
+                <ul>
+                    <li>CIM : Données métier pures (ex: transformationName)</li>
+                    <li>PIM : Données techniques ajoutées (UUID, version, timestamp)</li>
+                </ul>
+                <p>Comportement : Le PIM décrit les opérations sur les objets informatiques, pas sur les objets réels
+                </p>
+                <p>Paradigme objet expliqué :</p>
+                <p>Les opérations définissent le comportement des représentations informatiques, pas des comportements
+                    du monde réel. Une Transformation informatique n'agit pas comme dans le métier, elle exécute des
+                    instructions (execute(inputModel): outputModel).</p>
+
+                <h4>VI. PROCESSUS DE DÉVELOPPEMENT ET RÔLES</h4>
+
+                <h5>La chaîne de création de valeur</h5>
+                <ul>
+                    <li>Experts métier → Donnent le contenu, valident le CIM</li>
+                    <li>Analystes métier → Capturrent les besoins, formalisent</li>
+                    <li>Architectes applicatifs → Conçoivent le PIM (logique fonctionnelle)</li>
+                    <li>Architectes techniques/Développeurs → Implémentent le PSM et le code</li>
+                </ul>
+
+                <h5>Typologie des applications</h5>
+                <ul>
+                    <li>Outils personnels (Word, CAO) : Aucune gestion de rôles, fonctionnalités ouvertes</li>
+                    <li>Outils d'équipe : Collaboration simple</li>
+                    <li>Progiciels d'entreprise : Gestion fine des rôles, permissions, processus, contexte
+                        organisationnel</li>
+                </ul>
+                <p>Leçon : La complexité de modélisation dépend du contexte d'usage. Un outil personnel ne nécessite pas
+                    de CIM détaillé.</p>
+
+                <h4>VII. EXERCICE DEMANDÉ AUX ÉTUDIANTS</h4>
+
+                <h5>Consigne précise</h5>
+                <ul>
+                    <li>Choisir VOTRE domaine (hydrographie, automatisme, etc.)</li>
+                    <li>Utiliser ChatGPT pour extraire le vocabulaire</li>
+                    <li>Produire un CIM (PlantUML) : graphe de concepts métier</li>
+                    <li>Produire un PIM : diagrammes de classes et composants</li>
+                    <li>Explorer les diagrammes de séquence pour le comportement dynamique</li>
+                </ul>
+
+                <h5>Objectif pédagogique :</h5>
+                <p>Se projeter dans son propre métier pour comprendre :</p>
+                <ul>
+                    <li>Comment communiquer ses besoins aux informaticiens</li>
+                    <li>Quelle valeur apporte chaque niveau de modèle</li>
+                    <li>Pourquoi séparer le quoi du comment</li>
+                </ul>
+
+                <h4>VIII. APERÇU DES DIAGRAMMES DE SÉQUENCE</h4>
+
+                <h5>Démonstration : ChatGPT génère un diagramme de séquence représentant :</h5>
+                <ul>
+                    <li>Ingénieur → Crée un modèle via l'éditeur</li>
+                    <li>API Gateway → Transmet au repository</li>
+                    <li>Event Bus → Notifie les moteurs (validation, transformation)</li>
+                    <li>Trace Manager → Enregistre les actions</li>
+                </ul>
+                <p>Principe : Séquençage temporel (de haut en bas) avec des échanges de messages entre éléments actifs.
+                </p>
+                <p>Expressivité : Langage procédural avec boucles, blocs conditionnels, appels de sous-fonctions →
+                    Simulation possible d'un modèle exécutable.</p>
+
+                <h4>IX. LIMITES DE PLANTUML ET PERSPECTIVES</h4>
+
+                <h5>Inconvénients identifiés</h5>
+                <ul>
+                    <li>Syntaxe non standard → Pas d'interopérabilité</li>
+                    <li>Mélange fond/forme dans le même texte</li>
+                    <li>Pas de vérification sémantique automatique</li>
+                    <li>Pas d'identifiants uniques pour garantir la cohérence multi-diagrammes</li>
+                    <li>Erreurs de syntaxe fréquentes avec ChatGPT</li>
+                </ul>
+
+                <h5>Prochaines études</h5>
+                <ul>
+                    <li>Outils professionnels : MagicDraw, Enterprise Architect, Papyrus</li>
+                    <li>Capacités avancées : Modèles manipulables, vérification, cohérence, génération de code</li>
+                    <li>Analyse des travaux étudiants : Cas concrets personnalisés</li>
+                </ul>
+
+                <h4>X. CONCLUSION ET MESSAGES CLÉS</h4>
+
+                <h5>Ce qu'il faut retenir</h5>
+                <p>UML est un langage, pas une méthode. Son usage est contextualisé :</p>
+                <ul>
+                    <li>CIM : Pour les experts métier (vocabulaire)</li>
+                    <li>PIM : Pour les architectes (logique fonctionnelle)</li>
+                    <li>PSM : Pour les développeurs (technologie)</li>
+                </ul>
+                <p>Les diagrammes sont réutilisables à tous les niveaux, mais représentent des choses différentes. Un
+                    diagramme de classes n'est pas un type de modèle, c'est un type de représentation.</p>
+
+                <h5>Valeur ajoutée</h5>
+                <p>Savoir pourquoi on modélise et avec qui on communique évite la "prise de tête" inutile. L'objectif
+                    n'est pas de maîtriser toute la syntaxe, mais de comprendre le storytelling systémique qui sous-tend
+                    tout projet logiciel.</p>
+
+                <h4>XI. QUESTIONS/RÉPONSES FINALE</h4>
+
+                <h5>Q : Date limite pour l'exercice ?</h5>
+                <p>R : Semaine prochaine. Plus tôt est mieux, car c'est un investissement personnel. Bonus de 1-2 points
+                    pour l'implication.</p>
+
+                <h5>Q : Disponibilité de l'enregistrement ?</h5>
+                <p>R : Découpé en séquences sur YouTube et intégré au support de cours dès ce soir.</p>
+
+                <h5>Q : Utilisation des travaux ?</h5>
+                <p>R : Constituera une bibliothèque de cas concrets (anonymisés) pour illustrer les prochaines sessions.
+                </p>
                 <li>Enregistrement vidéo<br>
-                    <!--
-                    
-                    <a href="https://youtube.com/playlist?list=PLxT3cRUflqnHPrixA_hsYidy2q8Nfdy31&si=o9hAkSDz5mI-cmXD"
-                        target="_blank">
-                        <img src="https://img.youtube.com/vi/v-9kt7MYvr8/hqdefault.jpg"
+
+                    <a href="https://www.youtube.com/playlist?list=PLxT3cRUflqnEvjGbYJbUg46i29clhkTEB" target="_blank">
+                        <img src="https://i9.ytimg.com/vi/0gbVKEXN-0k/mqdefault.jpg?v=69219bae&sqp=CLS2hskG&rs=AOn4CLB8cZlLIKcdvPuCuHJpNQNU2M47Xw"
                             alt="Playlist YouTube - Introduction UML 2025" width="560" style="border-radius:8px;">
                     </a>
-                    -->
+
+                </li>
+            </ul>
+            <h2>Session 05</h2>
+
+            <h3>Résumé rapide</h3>
+            La session porte sur la modélisation visuelle avec UML, soulignant la nécessité de distinguer la
+            modélisation du simple dessin pour une ingénierie exploitable. Après un rappel sur le paradigme objet
+            (classes, encapsulation, interfaces), les outils qui ne manipulent que des représentations graphiques sont
+            critiqués: PlantUML offre un layout automatique mais sa syntaxe textuelle non-standard et l'absence de
+            vérification sémantique le rendent fragile et non interactif. yEd, bien qu'offrant de puissants algorithmes
+            de mise en page, manipule des primitives visuelles de graphe plutôt que des concepts UML formels. . Seuls
+            les ateliers de modélisation formelle (tels que Enterprise Architect, MagicDraw, Modelio et Papyrus)
+            manipulent des modèles exploitables par la machine pour la génération de code, la validation et la cohérence
+            multi-diagrammes, accélérant ainsi l'ingénierie par les modèles. Une exploration innovante présente ensuite
+            des technologies visuelles pour gérer la complexité des grands systèmes, comme les graphes physiques
+            interactifs (Vis.js) et Cytoscape.js pour la navigation multi-niveaux et l'analyse par algorithmes de
+            graphes et matrices d'adjacence. En conclusion, le choix d'outil doit s'adapter au besoin (documentation
+            simple ou ingénierie critique) et l'IA (LLM) peut expliquer des modèles existants mais ne peut pas se
+            substituer à l'expertise humaine pour la création de systèmes fiables. La prochaine étape sera une session
+            pratique d'installation et de modélisation sur des cas réels.
+
+            <h3>Résumé Long</h3>
+
+            <p>La modélisation visuelle **UML** est analysée en insistant sur la distinction fondamentale entre
+                la **modélisation formelle** (interprétable par la machine) et le **simple dessin**. Cela débuté par
+                un rappel du **Paradigme Objet** (classes, attributs, opérations, encapsulation et traçabilité) pour
+                définir la structure décrite par les diagrammes de classe, qui sont des diagrammes statiques.</p>
+
+            <h4>Outils de Représentation et leurs Limites</h4>
+            <p>Sont comparés trois familles d'outils pour la création des diagrammes de classe :</p>
+
+            <ul>
+                <li>
+                    <h5>Solutions Textuelles (PlantUML)</h5>
+                    <p>Ces outils offrent un avantage de **Layout automatique** à partir d'une syntaxe textuelle.
+                        Cependant, leurs inconvénients sont majeurs : la syntaxe est non-standard, la modification est
+                        **laborieuse** (nécessité de modifier le texte à plusieurs endroits), le **filtrage est
+                        difficile**, et il y a une **absence totale d'interactivité** et de **vérification sémantique**,
+                        car ils manipulent du code et non un modèle formel.</p>
+                </li>
+                <li>
+                    <h5>Outils de Dessin avec Layout Automatique (yEd)</h5>
+                    <p>Ces éditeurs de graphes facilitent la production rapide grâce à une **interaction visuelle** et
+                        de puissants **algorithmes de mise en page** (*Layouts* organiques ou circulaires). Néanmoins,
+                        yEd est classé comme outil de dessin car il manipule des **primitives visuelles** (formes,
+                        graphes GraphML) et non des **concepts UML natifs** (classe, attribut, opération). Le modèle
+                        n'est valide que par interprétation humaine.</p>
+                </li>
+                <li>
+                    <h5>Ateliers de Modélisation (MDA)</h5>
+                    <p>Ces outils (Enterprise Architect, MagicDraw, Modelio, Papyrus) sont les seuls à manipuler des
+                        **modèles formels et exploitables**. Ils permettent l'**Ingénierie par les Modèles (MBE)**,
+                        incluant la **génération de code**, la **validation** et la garantie de la **cohérence
+                        multi-diagrammes**. L'objectif est de rendre l'ingénierie plus rapide sans simplifier le travail
+                        de conception lui-même.</p>
                 </li>
             </ul>
 
-            <h2>Session 05</h2>
+            <h4>Technologies Visuelles Avancées et Conclusion</h4>
+            <p>Les technologies visuelles émergentes sont comparés pour gérer l'**explosion
+                combinatoire** et l'effet "spaghetti" dans les modèles complexes, notamment les **graphes physiques
+                interactifs** (Vis.js) et surtout **Cytoscape.js** pour les graphes composites avec navigation
+                multi-niveaux et algorithmes d'analyse.</p>
+
+            <p>En conclusion est souligné l'importance d'**adapter l'outil au besoin** (documentation
+                simple vs. ingénierie critique). Il faut prendre garde à l'utilisation non raisonnée de
+                l'**IA** : les LLM peuvent expliquer des modèles existants mais ne peuvent pas créer de systèmes fiables
+                sans l'expertise humaine nécessaire à la conception. La prochaine session sera entièrement pratique pour
+                concrétiser ces concepts.</p>
+
+            <h3>RETRANSCRIPTION COMPLÈTE DU COURS : Initiation à UML et Ingénierie par les Modèles</h3>
+
+            <p><strong>Intervenant :</strong> Nicolas Figay<br>
+                <strong>Session :</strong> 12 novembre 2025
+            </p>
+
+            <h4>I. CONTEXTE ET OBJECTIFS DE LA SESSION</h4>
+            <p>L'intention pédagogique était d'analyser les modèles générés lors de la précédente séance, où des LLM
+                (ChatGPT) avaient été utilisés pour produire des diagrammes UML. L'objectif central de la session était
+                de faire comprendre que la **modélisation UML n'est pas qu'un exercice de dessin**, mais une
+                **formalisation d'un système** basée sur le **paradigme objet**. Un diagramme de classe doit représenter
+                des classes de concepts, structurant à la fois les données (attributs) et les comportements
+                (opérations), ce qui différencie fondamentalement l'approche objet des approches antérieures.</p>
+
+            <h4>II. LIMITES FONDAMENTALES DE PLANTUML</h4>
+            <ul>
+                <li>
+                    <h5>Le Problème de la Syntaxe Textuelle</h5>
+                    <p>PlantUML génère des diagrammes à partir d'un texte. Une simple faute de frappe sur un nom de
+                        classe **détruit toutes les relations associées**, nécessitant une correction manuelle de chaque
+                        occurrence dans le code, ce qui devient ingérable sur des modèles complexes.</p>
+                </li>
+                <li>
+                    <h5>Absence d'Interactivité et de Paramétrage</h5>
+                    <p>Cet outil manque cruellement d'interactivité. Il est impossible de masquer temporairement des
+                        opérations sans les supprimer du texte, d'effectuer un **filtrage dynamique** ou de manipuler
+                        directement le diagramme. **Verdict :** PlantUML est un outil de **génération**, adapté au
+                        prototypage rapide, mais pas à la conception itérative de systèmes complexes.</p>
+                </li>
+            </ul>
+
+            <h4>III. OUTILS DE DESSIN VISUEL ÉVOLUÉ : DÉMONSTRATION DE YED</h4>
+            <ul>
+                <li>
+                    <h5>Principes et Avantages</h5>
+                    <p>**Yed** est un éditeur de graphes permettant la **création visuelle directe** (glisser-déposer)
+                        et offrant des fonctionnalités de **Layout automatique** (algorithmes circulaires, arborescents)
+                        ainsi qu'une manipulation interactive (colorisation, regroupement).</p>
+                </li>
+                <li>
+                    <h5>Limite Majeure : Pas de Sémantique UML</h5>
+                    <p>Le code source GraphML de Yed (format XML) ne contient que des **primitives géométriques** (
+                        <node>, <edge>), sans aucune notion de concept UML (Class, Attribute, Operation). L'ordinateur
+                                ne "comprend" pas le sens du diagramme. C'est un **outil de dessin**, pas un atelier de
+                                modélisation. Par analogie, Yed ne manipule que la présentation, pas le modèle
+                                structuré.
+                    </p>
+                </li>
+            </ul>
+
+            <h4>IV. TECHNOLOGIES VISUELLES ÉMERGENTES ET PERSPECTIVES</h4>
+            <p>Ces outils visent à maîtriser l'effet "**boule de cheveux**" (*spaghetti diagram*) en permettant de
+                naviguer verticalement et horizontalement dans la complexité :</p>
+            <ul>
+                <li>
+                    <h5>Vis.js : Graphes Physiques Interactifs</h5>
+                    <p>Utilisation d'algorithmes de forces (attraction/répulsion) pour explorer dynamiquement des
+                        graphes denses, avec paramétrage en temps réel (gravité, vitesse, etc.).</p>
+                </li>
+                <li>
+                    <h5>Timelines : Projection Temporelle</h5>
+                    <p>Visualisation des éléments du modèle sur une frise chronologique, utile pour tracer l'évolution
+                        d'une architecture ou des *roadmaps*.</p>
+                </li>
+                <li>
+                    <h5>Cytoscape.js : Le Futur de la Modélisation ?</h5>
+                    <p>Cette bibliothèque permet les **graphes composites** (nœuds contenant d'autres nœuds avec
+                        collapse/expand multi-niveaux), l'application d'**algorithmes de graphes** (plus court chemin,
+                        clustering) et l'utilisation de **matrices d'adjacence**.</p>
+                </li>
+            </ul>
+
+            <h4>V. CRITÈRES DE CHOIX D'UN OUTIL UML</h4>
+            <p>Le choix doit se faire selon l'objectif, en distinguant trois familles d'outils :</p>
+            <ul>
+                <li>**Outils de dessin statique** (Visio, PowerPoint) : pour de la simple documentation.</li>
+                <li>**Outils textuels** (PlantUML) : pour du prototypage rapide et non interactif.</li>
+                <li>**Ateliers de modélisation** (Enterprise Architect, MagicDraw, Modelio, Papyrus) : pour la
+                    manipulation formelle et critique du modèle.</li>
+            </ul>
+
+            <p>Les **ateliers professionnels** offrent des capacités essentielles : **cohérence multi-diagrammes**,
+                **validation automatique** (règles et contraintes), **génération de code**, **reverse engineering** et
+                intégration avec la gestion des exigences. L'offre se partage entre outils commerciaux (Enterprise
+                Architect, MagicDraw) et open source (Modelio, Papyrus).</p>
+
+            <h4>VI. SYNTHESE : MODÉLISER ≠ DESSINER</h4>
+            <ul>
+                <li>
+                    <h5>Le Modèle comme Source Unique de Vérité</h5>
+                    <p>Le **modèle** contient toutes les informations structurées (comme un atlas), tandis que le
+                        **diagramme** est une vue partielle pour des objectifs de communication spécifiques. Le modèle
+                        est la source de vérité.</p>
+                </li>
+                <li>
+                    <h5>L'IA Générative comme Assistant, Pas comme Remplaçant</h5>
+                    <p>Les LLM peuvent **expliquer** un modèle UML existant, mais ils **ne peuvent pas créer des modèles
+                        critiques fiables** (risque d'hallucination). L'expertise humaine reste irremplaçable, notamment
+                        pour la validation formelle (Exemple : Airbus ne concevra jamais un avion avec ChatGPT). L'IA
+                        est un facilitateur pour l'intelligence humaine.</p>
+                </li>
+            </ul>
+
+            <h4>VII. PLANIFICATION ET EXERCICES PRATIQUES</h4>
+            <p>Pour la prochaine session, les étudiants doivent **choisir un atelier de modélisation** (Modelio,
+                Papyrus, ou équivalent), reprendre leur modèle PlantUML de domaine métier, et le **recréer dans
+                l'atelier** en expérimentant la génération de code, la validation et les vues multiples. L'évaluation
+                comprendra un QCM (mi-décembre) et un TP pratique (modèles produits).</p>
+
+            <h4>VIII. CONCLUSION ET MESSAGES FINAUX</h4>
+            <p>Nicolas Figay a insisté sur les points suivants : 1) Comprendre le **pourquoi** (maîtriser la complexité
+                et communiquer selon le niveau d'abstraction). 2) **Adapter l'outil au besoin** (PlantUML pour la doc,
+                MagicDraw pour les systèmes critiques). 3) Utiliser l'IA comme **copilote** pour générer des
+                propositions, mais toujours valider manuellement, car l'expertise humaine est la seule garante de
+                qualité. La prochaine session sera **pratique et guidée**.</p>
+            <ul>
+                <li>Enregistrement vidéo<br>
+
+
+                    <a href="https://youtube.com/playlist?list=PLxT3cRUflqnHPrixA_hsYidy2q8Nfdy31&si=o9hAkSDz5mI-cmXD"
+                        target="_blank">
+                        <img src="https://i9.ytimg.com/vi/OC8qyAmsNb4/mqdefault.jpg?v=69219ed7&sqp=CLi9hskG&rs=AOn4CLBmvmJuUGYuw0GoGF0Uuushzzajjg"
+                            alt="Playlist YouTube - Introduction UML 2025" width="560" style="border-radius:8px;">
+                    </a>
+
+                </li>
+            </ul>
+
+            <h2>Session 06</h2>
 
             <h3>Résumé rapide</h3>
             <p>Le cours a commencé par la présentation des supports de cours, en expliquant le système de notation,
@@ -418,12 +785,95 @@
             modèles de domaine, plutôt que l'exemple qu'il avait montré. Il a souligné l'importance de la pratique
             plutôt que des connaissances théoriques. La semaine prochaine, le formateur fournira un nouvel outil à la
             classe pour qu'elle puisse expérimenter, poursuivant ainsi les exercices de modélisation pratique.
+            <h3>TRANSCRIPTION DU COURS : Outils de modélisation UML - Découverte de Papyrus</h3>
+
+            <h4>I. Introduction : Les Outils de Modélisation</h4>
+            <p>Le cours a rappelé la typologie des outils UML existants, en insistant sur la nécessité de passer du
+                **"dessin"** à la **"modélisation visuelle"**. Contrairement aux outils de dessin statique (PowerPoint,
+                Visio), la modélisation visuelle implique que les symboles UML possèdent une **sémantique précise** qui
+                permet une communication claire entre les acteurs.</p>
+
+            <ul>
+                <li>1. Outils de dessin statique (PowerPoint, Visio, Dia) : Purement graphique, travail manuel, risque
+                    d'incohérence, pas de sémantique.</li>
+                <li>2. Outils de dessin automatisé : Permettent un positionnement automatique, mais restent du dessin.
+                </li>
+                <li>3. Outils de modélisation visuelle : Production simultanée de diagrammes et de **modèles
+                    structurés**.</li>
+                <li>4. Outils d'exploration interactive : Approche émergente permettant une navigation dynamique dans le
+                    modèle.</li>
+            </ul>
+
+            <h4>II. Philosophie : Modélisation vs Dessin</h4>
+            <p>La **modélisation visuelle** est basée sur un **modèle unique** (une structure de données arborescente)
+                qui contient tous les éléments. Les diagrammes multiples sont de simples **vues** sur ce modèle. Cela
+                garantit la **cohérence automatique** : modifier un objet dans le modèle met à jour toutes ses
+                représentations visuelles.</p>
+
+            <p><strong>Avantages Majeurs de la Modélisation :</strong></p>
+            <ul>
+                <li>1. Pas de duplication : Changement de nom propagé automatiquement dans tous les diagrammes.</li>
+                <li>2. **Validation automatique** selon les règles du langage.</li>
+                <li>3. Possibilité de **génération de code**, de documentation, et de simulation.</li>
+                <li>4. Exploration et interrogation du modèle.</li>
+            </ul>
+
+            <p><strong>Inconvénients du Dessin :</strong> Modifications répétitives, risque élevé d'incohérence, absence
+                de validation sémantique et non interrogeable.</p>
+
+            <h4>III. Installation et Prise en Main de Papyrus</h4>
+
+            <h5>A. Installation et Configuration</h5>
+            <p>**Papyrus** est un outil **open source** basé sur **Eclipse**, compatible avec toutes les plateformes
+                (Windows, Linux, Mac). Après le téléchargement (version recommandée : Papyrus Desktop 7.0.0, 2025), la
+                configuration initiale demande de créer un **"Papyrus Project"** (UML Project) et obligatoirement une
+                **"Vue"** (*Create View*) pour pouvoir créer des diagrammes.</p>
+
+            <h5>B. Interface Papyrus</h5>
+            <p>L'interface se divise en quatre zones clés :</p>
+            <ul>
+                <li>1. **Project Explorer** : Vue fichiers du projet.</li>
+                <li>2. **Model Explorer** : Représentation de la **structure arborescente du modèle** (packages,
+                    classes).</li>
+                <li>3. **Zone de diagramme** : L'éditeur visuel.</li>
+                <li>4. **Palette** : Outils de création d'éléments (classes, associations).</li>
+                <li>5. **Properties** : Propriétés de l'objet sélectionné.</li>
+            </ul>
+
+            <h5>C. Pratique : Création et Cohérence des Éléments</h5>
+            <p>Les éléments peuvent être créés de deux manières :</p>
+            <ul>
+                <li>1. **Depuis le Model Explorer :** L'objet est créé dans le modèle mais doit être glissé-déposé dans
+                    le diagramme pour être visualisé.</li>
+                <li>2. **Depuis la Palette :** L'objet est créé **simultanément** dans le modèle et dans la vue du
+                    diagramme.</li>
+            </ul>
+
+            <p>La distinction entre propriétés est fondamentale : le **Nom** est une **propriété du modèle** (elle se
+                propage partout), tandis que la **Couleur** et la **Taille** sont des **propriétés visuelles**
+                (spécifiques à la représentation). Le changement d'un nom dans les propriétés **met à jour
+                automatiquement toutes les vues**.</p>
+
+            <h5>D. Gestion des Vues Multiples</h5>
+            <p>Un même objet peut apparaître dans plusieurs diagrammes différents. La suppression se fait avec prudence
+                : il faut distinguer **"Delete from Diagram"** (supprime uniquement la vue) et **"Delete from Model"**
+                (supprime l'objet partout, car il s'agit de la source unique de vérité).</p>
+
+            <h4>IV. Points Clés à Retenir et Prochaines Étapes</h4>
+            <p>Les messages centraux sont : **Dessiner ≠ Modéliser**, et **Modèle ≠ Diagramme**. L'interopérabilité est
+                assurée par le format **XMI** qui permet l'échange de modèles. De plus, UML est extensible via les
+                **profils** pour des domaines spécifiques (robotique, systèmes embarqués).</p>
+
+            <p>Pour le prochain cours, l'exercice consiste à **installer Papyrus** et à **recréer concrètement** les
+                diagrammes PlantUML générés précédemment, afin d'expérimenter la modélisation visuelle et ses capacités
+                (génération de code, validation) sur leurs cas d'étude personnalisés.</p>
             <ul>
                 <li>Enregistrement vidéo<br>
 
 
-                    <a href="https://www.youtube.com/playlist?list=PLxT3cRUflqnE6ky3fmV9oOzECpov-O90x" target="_blank">
-                        <img src="https://i.ytimg.com/pl_c/PLxT3cRUflqnE6ky3fmV9oOzECpov-O90x/studio_square_thumbnail.jpg?sqp=CK_t-sgG-oaymwEICNYGEOADSFqi85f_AwYIoP_6yAY=&rs=AOn4CLDzMJF53KPlxEilS-MklNuNCa5ZMQ"
+                    <a href="https://youtube.com/playlist?list=PLxT3cRUflqnE6ky3fmV9oOzECpov-O90x&si=NOeACUysPUvgXv--"
+                        target="_blank">
+                        <img src="https://i9.ytimg.com/vi/7OkAtCizlSM/mqdefault.jpg?v=6921a1ca&sqp=CJDChskG&rs=AOn4CLDoHqpN4HaYiYvUR3FufpTfTywrQw"
                             alt="Playlist YouTube - Introduction UML 2025" width="560" style="border-radius:8px;">
                     </a>
 
